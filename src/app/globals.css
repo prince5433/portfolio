@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 4 8 22;
+  --foreground: 240 248 255;
+  --muted: 148 163 184;
+  --panel: 8 17 31;
+  --line: 255 255 255;
+  --accent: 45 212 191;
+  --accent-soft: 103 232 249;
+  --cursor-x: 50vw;
+  --cursor-y: 30vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.14), transparent 40%),
+    linear-gradient(180deg, #040816 0%, #050b16 50%, #040816 100%);
+  color: rgb(var(--foreground));
+  text-rendering: geometricPrecision;
+}
+
+section {
+  scroll-margin-top: 96px;
+}
+
+
+* {
+  border-color: rgba(255, 255, 255, 0.08);
+  overflow-wrap: anywhere;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.35);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #040816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(45, 212, 191, 0.75), rgba(139, 92, 246, 0.75));
+  border: 2px solid #040816;
+  border-radius: 999px;
+}
+
+
+.glass {
+  backdrop-filter: blur(24px);
+}
+
+.link-underline {
+  position: relative;
+}
