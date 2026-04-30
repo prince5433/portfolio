@@ -70,6 +70,7 @@ export const projects = [
     metrics: ["100+ sessions/month", "80% review automation", "Role-based access"],
     accent: "from-indigo-400/30 via-sky-400/20 to-transparent",
     github: "https://github.com/prince5433/IntervueX.git",
+    live: "https://intervue-x-two.vercel.app/",
     image: "/projects/intervuex.png"
   },
   {
