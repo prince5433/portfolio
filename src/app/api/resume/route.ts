@@ -5,7 +5,7 @@ function createPdf() {
     "Prince Seth",
     "Full Stack Developer",
     "Noida, India | princeseth2611@gmail.com | +91 9369456727",
-    "GitHub: prince5433 | LinkedIn: prince43265 | LeetCode: sethjii",
+    "GitHub: prince5433 | LinkedIn: prince43265 | LeetCode: Prince9369",
     "",
     "Highlights:",
     "- Competitive Programmer: LeetCode Knight (1868), Codeforces Specialist (1469), CodeChef 3 Star (1700)",

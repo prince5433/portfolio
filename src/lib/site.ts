@@ -34,13 +34,13 @@ export const quickWins = [
 ];
 
 export const heroStats = [
-  { label: "LeetCode", value: "1868", detail: "Knight", href: "https://leetcode.com/u/sethjii/" },
+  { label: "LeetCode", value: "1868", detail: "Knight", href: "https://leetcode.com/u/Prince9369/" },
   { label: "Codeforces", value: "1469", detail: "Specialist", href: "https://codeforces.com/profile/prince9369" },
   { label: "CodeChef", value: "1700", detail: "3 Star", href: "https://www.codechef.com/users/prince7452" }
 ];
 
 export const competitiveLinks = [
-  { label: "LeetCode", href: "https://leetcode.com/u/sethjii/", detail: "Knight 1868" },
+  { label: "LeetCode", href: "https://leetcode.com/u/Prince9369/", detail: "Knight 1868" },
   { label: "Codeforces", href: "https://codeforces.com/profile/prince9369", detail: "Specialist 1469" },
   { label: "CodeChef", href: "https://www.codechef.com/users/prince7452", detail: "3 Star 1700" }
 ];
