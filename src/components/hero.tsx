@@ -145,24 +145,24 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        <motion.div style={{ y: useTransform(scrollY, [0, 400], [0, -20]) }} className="relative animate-float">
-          <div className="absolute -inset-6 rounded-[2rem] bg-cyan-500/10 blur-3xl" />
+        <motion.div style={{ y: useTransform(scrollY, [0, 400], [0, -20]) }} className="relative">
+          <div className="absolute -inset-6 rounded-[2rem] bg-gradient-radial from-cyan-500/10 to-transparent" />
           <div className="pointer-events-none absolute -inset-8 hidden rounded-[2.5rem] border border-cyan-300/15 lg:block">
-            <div className="absolute inset-0 animate-orbit">
-              <span className="absolute -top-3 left-1/2 rounded-full border border-cyan-300/25 bg-slate-950/85 px-3 py-1 text-xs font-semibold text-cyan-100 shadow-glow backdrop-blur-xl">
+            <div className="absolute inset-0 animate-orbit will-change-transform">
+              <span className="absolute -top-3 left-1/2 rounded-full border border-cyan-300/25 bg-[#0a1220] px-3 py-1 text-xs font-semibold text-cyan-100 shadow-glow">
                 RAG
               </span>
-              <span className="absolute bottom-10 -left-4 rounded-full border border-violet-300/25 bg-slate-950/85 px-3 py-1 text-xs font-semibold text-violet-100 shadow-glow backdrop-blur-xl">
+              <span className="absolute bottom-10 -left-4 rounded-full border border-violet-300/25 bg-[#0a1220] px-3 py-1 text-xs font-semibold text-violet-100 shadow-glow">
                 UX
               </span>
             </div>
-            <div className="absolute inset-4 animate-reverseOrbit rounded-[2rem] border border-violet-300/10">
-              <span className="absolute -right-4 top-1/3 rounded-full border border-teal-300/25 bg-slate-950/85 px-3 py-1 text-xs font-semibold text-teal-100 shadow-glow backdrop-blur-xl">
+            <div className="absolute inset-4 animate-reverseOrbit rounded-[2rem] border border-violet-300/10 will-change-transform">
+              <span className="absolute -right-4 top-1/3 rounded-full border border-teal-300/25 bg-[#0a1220] px-3 py-1 text-xs font-semibold text-teal-100 shadow-glow">
                 APIs
               </span>
             </div>
           </div>
-          <div className="relative mx-auto max-w-lg overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a1220]/80 p-3 shadow-glass backdrop-blur-xl sm:p-4 lg:max-w-none">
+          <div className="relative mx-auto max-w-lg overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a1220] p-3 shadow-glass sm:p-4 lg:max-w-none">
             <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/10 to-transparent" />
             <div className="mb-4 overflow-hidden rounded-[1.6rem] border border-white/10 bg-gradient-to-br from-cyan-500/20 via-transparent to-fuchsia-500/20 p-[1px]">
               <div className="rounded-[1.5rem] bg-[#07111f] p-3">

@@ -1,36 +1,41 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import { PageTransition } from "@/components/page-transition";
 import { FloatingNav } from "@/components/floating-nav";
 
 export function SiteShell({ children }: { children: ReactNode }) {
-  const [cursor, setCursor] = useState({ x: 0, y: 0 });
+  const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let frameId: number;
     const onMove = (event: MouseEvent) => {
-      setCursor({ x: event.clientX, y: event.clientY });
+      cancelAnimationFrame(frameId);
+      frameId = requestAnimationFrame(() => {
+        if (glowRef.current) {
+          glowRef.current.style.setProperty("--cursor-x", `${event.clientX}px`);
+          glowRef.current.style.setProperty("--cursor-y", `${event.clientY}px`);
+        }
+      });
     };
 
-    window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
+    window.addEventListener("mousemove", onMove, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      cancelAnimationFrame(frameId);
+    };
   }, []);
-
-  useEffect(() => {
-    document.documentElement.style.setProperty("--cursor-x", `${cursor.x}px`);
-    document.documentElement.style.setProperty("--cursor-y", `${cursor.y}px`);
-  }, [cursor]);
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
       <div className="pointer-events-none fixed inset-0 bg-hero-glow opacity-90" />
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.08)_1px,transparent_0)] [background-size:24px_24px] opacity-20" />
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_var(--cursor-x)_var(--cursor-y),rgba(56,189,248,0.18),transparent_14rem)] transition-[opacity]" />
+      <div ref={glowRef} className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_var(--cursor-x,50vw)_var(--cursor-y,50vh),rgba(56,189,248,0.18),transparent_14rem)] transition-[opacity]" />
       <div className="pointer-events-none fixed inset-[-18%] opacity-55 blur-3xl">
-        <div className="absolute left-[8%] top-[8%] h-72 w-72 animate-aurora rounded-full bg-teal-400/20" />
-        <div className="absolute right-[10%] top-[18%] h-80 w-80 animate-aurora rounded-full bg-violet-500/20 [animation-delay:-5s]" />
-        <div className="absolute bottom-[5%] left-[35%] h-72 w-72 animate-aurora rounded-full bg-sky-400/16 [animation-delay:-9s]" />
+        <div className="absolute left-[8%] top-[8%] h-72 w-72 rounded-full bg-teal-400/20" />
+        <div className="absolute right-[10%] top-[18%] h-80 w-80 rounded-full bg-violet-500/20 [animation-delay:-5s]" />
+        <div className="absolute bottom-[5%] left-[35%] h-72 w-72 rounded-full bg-sky-400/16 [animation-delay:-9s]" />
       </div>
       <div className="pointer-events-none fixed inset-0 overflow-hidden opacity-30">
         <div className="absolute top-[16%] h-px w-[42rem] animate-beam bg-gradient-to-r from-transparent via-cyan-200 to-transparent" />
