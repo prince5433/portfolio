@@ -68,7 +68,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-hero-grid opacity-20 animate-shimmer" />
       <HeroParticles />
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-        <motion.div style={{ y, opacity }} className="relative z-10">
+        <motion.div style={{ y, opacity }} className="relative z-10 max-lg:!transform-none">
           <motion.div variants={stagger} initial="hidden" animate="show">
             <motion.div variants={fadeUp} className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-medium text-cyan-100 backdrop-blur">
               <BadgeCheck className="h-4 w-4" />
@@ -145,7 +145,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        <motion.div style={{ y: useTransform(scrollY, [0, 400], [0, -20]) }} className="relative">
+        <motion.div style={{ y: useTransform(scrollY, [0, 400], [0, -20]) }} className="relative max-lg:!transform-none">
           <div className="absolute -inset-6 rounded-[2rem] bg-gradient-radial from-cyan-500/10 to-transparent" />
           <div className="pointer-events-none absolute -inset-8 hidden rounded-[2.5rem] border border-cyan-300/15 lg:block">
             <div className="absolute inset-0 animate-orbit will-change-transform">
